@@ -32,14 +32,29 @@ function getComputerChoice() {
     }    
 }
 
-
 function getHumanChoice() {
     let humanChoice = prompt("Choose from: Rock, Paper, Scissors");
     return humanChoice.toLowerCase();
 }
 
+function playGame() {
+    for (let i = 1; i <= 5; i++){
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore) {
+        console.log("You won the game!");
+    } 
+    else if (computerScore > humanScore) {
+        console.log("You lost!");
+    }
+    else {
+        console.log("It's a tie!");
+    }
+}
+
+playGame();
